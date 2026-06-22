@@ -3,7 +3,7 @@ name: Deploy PHP Site
 on:
   push:
     branches:
-      - main
+      - production
 
 jobs:
   ftp-deploy:
