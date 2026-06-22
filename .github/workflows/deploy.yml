@@ -1,24 +1,24 @@
 name: Deploy PHP Site
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-ftp-deploy:
-runs-on: ubuntu-latest
+  ftp-deploy:
+    runs-on: ubuntu-latest
 
-steps:
+    steps:
 
-- name: Checkout
-uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-- name: FTP Deploy
-uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-with:
-server: ${{ secrets.FTP_SERVER }}
-username: ${{ secrets.FTP_USERNAME }}
-password: ${{ secrets.FTP_PASSWORD }}
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
 
-server-dir: public_html/girishg.net/demo-deploy/
+          server-dir: public_html/girishg.net/demo-deploy/
